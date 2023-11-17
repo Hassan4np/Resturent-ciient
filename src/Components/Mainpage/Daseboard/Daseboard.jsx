@@ -14,6 +14,9 @@ const Daseboard = () => {
                             <li className=" border bg-green-500 rounded-md  text-2xl"><Link to="/daseboard/user"><AiOutlineShoppingCart></AiOutlineShoppingCart>AdminHome</Link></li>
                         </ul>
                         <ul className="menu p-5">
+                            <li className=" border bg-green-500 rounded-md  text-2xl"><Link to="/daseboard/additem"><FaCalendar></FaCalendar>Add Item</Link></li>
+                        </ul>
+                        <ul className="menu p-5">
                             <li className=" border bg-green-500 rounded-md  text-2xl"><Link to="/daseboard/list"><FaCalendar></FaCalendar>Manage Item</Link></li>
                         </ul>
                         <ul className="menu p-5">

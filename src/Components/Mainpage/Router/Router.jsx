@@ -11,6 +11,7 @@ import PrivateRout from "../PrivateRout/PrivateRout";
 import Daseboard from "../Daseboard/Daseboard";
 import Cart from "../Daseboard/Cart";
 import AllUsers from "../Daseboard/AllUsers";
+import AddItem from "../Daseboard/AddItem";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -46,6 +47,10 @@ import AllUsers from "../Daseboard/AllUsers";
         {
           path:'cart',
           element:<Cart></Cart>
+        },
+        {
+          path:"additem",
+          element:<AddItem></AddItem>
         },
         {
           path:"users",

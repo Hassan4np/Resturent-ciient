@@ -72,7 +72,7 @@ const AllUsers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        {/* {
                             users?.map((user, idx) => <tr key={user._id}>
                                 <th>{idx + 1}</th>
                                 <td>{user?.name}</td>
@@ -82,7 +82,7 @@ const AllUsers = () => {
                                 }
                                 <td><button onClick={() => hendledelete(user._id)}><MdDelete className="text-2xl text-white rounded-md bg-red-500"></MdDelete></button></td>
                             </tr>)
-                        }
+                        } */}
 
                     </tbody>
                 </table>
