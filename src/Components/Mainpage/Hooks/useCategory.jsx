@@ -3,7 +3,8 @@ import useMenu from "./useMenu";
 
 
 const useCategory = ({ category }) => {
-    const menus = useMenu();
+    const [menus] = useMenu();
+    console.log(menus)
     const [items, setitems] = useState([])
     useEffect(() => {
         const categorys = menus.filter(item => item.category === category);

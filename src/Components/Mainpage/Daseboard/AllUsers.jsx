@@ -19,7 +19,6 @@ const AllUsers = () => {
             return res.data
         }
     })
-    console.log(users)
     const hendledelete = (id) => {
         console.log(id)
         axioussecret.delete(`users/${id}`)
@@ -41,7 +40,6 @@ const AllUsers = () => {
         })
     }
     const hendlemakeuser=(user)=>{
-        console.log(user)
         axioussecret.patch(`/users/admin/${user?._id}`)
         .then(res=>{
             console.log(res.data)
@@ -72,7 +70,7 @@ const AllUsers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {
+                        {
                             users?.map((user, idx) => <tr key={user._id}>
                                 <th>{idx + 1}</th>
                                 <td>{user?.name}</td>
@@ -82,7 +80,7 @@ const AllUsers = () => {
                                 }
                                 <td><button onClick={() => hendledelete(user._id)}><MdDelete className="text-2xl text-white rounded-md bg-red-500"></MdDelete></button></td>
                             </tr>)
-                        } */}
+                        }
 
                     </tbody>
                 </table>

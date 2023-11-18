@@ -12,6 +12,9 @@ import Daseboard from "../Daseboard/Daseboard";
 import Cart from "../Daseboard/Cart";
 import AllUsers from "../Daseboard/AllUsers";
 import AddItem from "../Daseboard/AddItem";
+import Manageitem from "../Daseboard/Manageitem";
+import Updateitem from "../Daseboard/Updateitem";
+import AdminRoute from "../Adminrout/AdminRoute";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -46,15 +49,24 @@ import AddItem from "../Daseboard/AddItem";
       children:[
         {
           path:'cart',
-          element:<Cart></Cart>
+          element:<PrivateRout><Cart></Cart></PrivateRout>
         },
         {
           path:"additem",
-          element:<AddItem></AddItem>
+          element:<AdminRoute><AddItem></AddItem></AdminRoute>
         },
         {
           path:"users",
-          element:<AllUsers></AllUsers>
+          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+        },
+        {
+          path:"manage",
+          element:<AdminRoute><Manageitem></Manageitem></AdminRoute>
+        },
+        {
+          path:"update/:id",
+          element:<AdminRoute><Updateitem></Updateitem></AdminRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/bistoboss/${params.id}`)
         }
       ]
     }

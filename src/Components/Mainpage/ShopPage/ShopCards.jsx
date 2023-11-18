@@ -10,8 +10,7 @@ const ShopCards = ({ category }) => {
     const [,refetch] = useQuarys();
     const axiossecret = useAxousSecret()
     const items = useCategory({ category });
-    console.log(items)
-console.log(axiossecret)
+    
     const navigate = useNavigate()
     const { user } = useAuth()
     const hengleCard = (item) => {
