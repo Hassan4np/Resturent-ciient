@@ -19,6 +19,7 @@ const AllUsers = () => {
             return res.data
         }
     })
+
     const hendledelete = (id) => {
         console.log(id)
         axioussecret.delete(`users/${id}`)

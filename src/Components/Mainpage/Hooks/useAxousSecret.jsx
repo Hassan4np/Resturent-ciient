@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 
 export const axiossecret = axios.create({
-  baseURL: 'http://localhost:5000'
+  baseURL: 'https://resturent-backend.vercel.app'
 
 });
 const useAxousSecret = () => {
@@ -11,7 +11,7 @@ const useAxousSecret = () => {
   const {UserLogout} = useAuth()
   axiossecret.interceptors.request.use(function (config) {
     const token = localStorage.getItem('access-token');
-    console.log('resuest stopped by intercepote', token);
+    // console.log('resuest stopped by intercepote', token);
     config.headers.authorization = `Bearer ${token}`
     return config
   }, function (error) {
@@ -23,10 +23,10 @@ const useAxousSecret = () => {
     return response
   }, async(error) => {
     const status = error.response.status
-    console.log("status errro in the intersapter", status)
+    // console.log("status errro in the intersapter", status)
     if (status === 401 || status === 403) {
-      await UserLogout()
-      nagigate('/login')
+      // await UserLogout()
+      // nagigate('/login')
     }
     return Promise.reject(error)
   })

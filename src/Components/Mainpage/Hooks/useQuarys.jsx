@@ -6,7 +6,7 @@ import useAuth from "./useAuth";
 const useQuarys = () => {
     const axioussecret = useAxousSecret();
     const {user} = useAuth()
-    const { data:cards=[],refetch } = useQuery({
+    const { data:cards=[],refetch,isPending } = useQuery({
         queryKey: ['repoData',user?.email],
         queryFn: () =>
         axioussecret.get(`/cards?email=${user?.email}`)
@@ -16,7 +16,7 @@ const useQuarys = () => {
         })
          
       })
-    return [cards,refetch]
+    return [cards,refetch,isPending]
 };
 
 export default useQuarys;

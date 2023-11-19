@@ -6,7 +6,7 @@ import useQuarys from "../Hooks/useQuarys";
 
 const Navber = () => {
     const [cards] = useQuarys();
-    console.log(cards.length)
+    // console.log(cards.length)
     const { user, UserLogout } = useAuth()
     const userlogout = () => {
         UserLogout()

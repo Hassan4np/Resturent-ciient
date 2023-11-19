@@ -66,7 +66,7 @@ import AdminRoute from "../Adminrout/AdminRoute";
         {
           path:"update/:id",
           element:<AdminRoute><Updateitem></Updateitem></AdminRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/bistoboss/${params.id}`)
+          loader:({params})=>fetch(`https://resturent-backend.vercel.app/bistoboss/${params.id}`)
         }
       ]
     }

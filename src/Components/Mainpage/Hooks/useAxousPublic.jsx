@@ -1,7 +1,9 @@
 import axios from "axios";
 
 export const axiospublic = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://resturent-backend.vercel.app'
+    // baseURL: 'https://resturent-backend.vercel.app'
+    //https://resturent-backend.vercel.app
  
   });
 

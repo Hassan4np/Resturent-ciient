@@ -10,7 +10,7 @@ const Menulist = () => {
             .then(data => {
                 const  propler = data.filter(item=>item.category==="popular")
                 setmenus(propler)
-                console.log(data)
+                // console.log(data)
              
             })
     }, [])
