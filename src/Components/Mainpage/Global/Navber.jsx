@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import useQuarys from "../Hooks/useQuarys";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Navber = () => {
     const [cards] = useQuarys();
+    const [isAdmin] = useAdmin();
     // console.log(cards.length)
     const { user, UserLogout } = useAuth()
     const userlogout = () => {
@@ -19,6 +21,13 @@ const Navber = () => {
         <Link to="/" className="mr-2" > <button className="btn btn-sm"><li><a>Home</a></li></button></Link>
         <Link to="/menu" className="mr-2"><button className="btn btn-sm"><li><a>menu</a></li></button></Link>
         <Link to="/shop" className="mr-2"><button className="btn btn-sm"><li><a>Shop</a></li></button></Link>
+        {
+           user && isAdmin &&  <Link to="/daseboard/adminhome" className="mr-2"><button className="btn btn-sm"><li><a>Daseboard</a></li></button></Link>
+        }
+        {
+            user && !isAdmin && <Link to="/daseboard/userhome"><button className="btn btn-sm"><li><a>Daseboard</a></li></button></Link>
+        }
+
         <Link to="daseboard/cart" className="mr-2">
             <button className="btn">
                 cart

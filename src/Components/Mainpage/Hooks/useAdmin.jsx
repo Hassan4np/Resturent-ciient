@@ -4,10 +4,11 @@ import useAxousSecret from "./useAxousSecret";
 
 
 const useAdmin = () => {
-    const {user} = useAuth();
+    const {user,loading} = useAuth();
     const axioussecret = useAxousSecret();
     const { data: isAdmin,isPending:isAdminloading } = useQuery({
         queryKey: [user?.email,"isAdmin"],
+        enabled: !loading,
         queryFn: async() =>{
        const res =  await  axioussecret.get(`/users/admin/${user?.email}`)
        console.log(res.data)

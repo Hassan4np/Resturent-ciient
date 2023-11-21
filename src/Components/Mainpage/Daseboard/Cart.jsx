@@ -2,11 +2,13 @@ import Swal from "sweetalert2";
 import useAxousSecret from "../Hooks/useAxousSecret";
 import useQuarys from "../Hooks/useQuarys";
 import { MdDelete } from 'react-icons/md';
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     //hook secton-------->
     const [cards, refetch] = useQuarys();
     const axioussecret = useAxousSecret();
+    // console.log(cards)
 
     //total secton-------->
     const totalprice = cards.reduce((total, item) => total + item.price, 0);
@@ -34,9 +36,13 @@ const Cart = () => {
     }
     return (
         <div>
-            <div className="flex justify-between px-10 border py-5">
+            <div className="flex justify-evenly px-10 border py-5">
                 <h1 className="text-2xl text-yellow-400">My Cards: {cards.length}</h1>
                 <h1 className="text-2xl text-green-500">Total: {totalprice}$</h1>
+               {
+                cards.length>0? <Link to={`/daseboard/prement`}><button className="btn btn-sm btn-success">Pay</button></Link>
+                :<button disabled className="btn btn-sm btn-success">Pay</button>
+               }
             </div>
             <div>
                 <div className="overflow-x-auto">

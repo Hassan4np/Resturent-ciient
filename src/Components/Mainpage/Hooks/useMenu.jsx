@@ -10,7 +10,7 @@ const useMenu = () => {
     // const [menus, setmenus] = useState([]);
 
     // useEffect(() => {
-    //     fetch('https://resturent-backend.vercel.app/bistoboss')
+    //     fetch('http://localhost:5000/bistoboss')
     //         .then(res => res.json())
     //         .then(data => {
     //             // const  propler = data.filter(item=>item.category==="popular")

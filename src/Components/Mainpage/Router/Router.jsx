@@ -15,6 +15,10 @@ import AddItem from "../Daseboard/AddItem";
 import Manageitem from "../Daseboard/Manageitem";
 import Updateitem from "../Daseboard/Updateitem";
 import AdminRoute from "../Adminrout/AdminRoute";
+import Prement from "../Daseboard/Payment/Prement";
+import Paymenthistory from "../Daseboard/Payment/Paymenthistory";
+import UserHome from "../Daseboard/UserHome/UserHome";
+import AdminHome from "../Daseboard/AdminHome/AdminHome";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -66,8 +70,25 @@ import AdminRoute from "../Adminrout/AdminRoute";
         {
           path:"update/:id",
           element:<AdminRoute><Updateitem></Updateitem></AdminRoute>,
-          loader:({params})=>fetch(`https://resturent-backend.vercel.app/bistoboss/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/bistoboss/${params.id}`)
+        },
+        {
+          path:"prement",
+          element:<Prement></Prement>
+        },
+        {
+          path:"history",
+          element:<Paymenthistory></Paymenthistory>
+        },
+        {
+          path:"userhome",
+          element:< UserHome></UserHome>
+        },
+        {
+          path:"adminhome",
+          element:<AdminHome></AdminHome>
         }
+       
       ]
     }
   ]);

@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { FaAd, FaCalendar, FaHome, FaList, FaPhoenixFramework, FaRegMinusSquare, FaShopify, FaTelegram } from 'react-icons/fa';
+import { FaAd, FaCalendar, FaHome, FaList, FaRegMinusSquare, FaShopify, FaTelegram } from 'react-icons/fa';
 import useAdmin from "../Hooks/useAdmin";
 
 const Daseboard = () => {
@@ -11,7 +11,7 @@ const Daseboard = () => {
                 {
                     isAdmin ? <>
                         <ul className="menu p-2">
-                            <li className=" border bg-green-200 rounded-md  text-2xl"><Link to="/daseboard/user"><AiOutlineShoppingCart></AiOutlineShoppingCart>AdminHome</Link></li>
+                            <li className=" border bg-green-200 rounded-md  text-2xl"><Link to="/daseboard/adminhome"><AiOutlineShoppingCart></AiOutlineShoppingCart>AdminHome</Link></li>
                         </ul>
                         <ul className="menu p-2">
                             <li className=" border bg-green-200 rounded-md  text-2xl"><Link to="/daseboard/additem"><FaCalendar></FaCalendar>Add Item</Link></li>
@@ -27,7 +27,7 @@ const Daseboard = () => {
                         </ul>
                     </> : <>
                         <ul className="menu p-2">
-                            <li className=" border bg-green-200 rounded-md  text-2xl"><Link to="/daseboard/user"><AiOutlineShoppingCart></AiOutlineShoppingCart>UserHome</Link></li>
+                            <li className=" border bg-green-200 rounded-md  text-2xl"><Link to="/daseboard/userhome"><AiOutlineShoppingCart></AiOutlineShoppingCart>UserHome</Link></li>
                         </ul>
                         <ul className="menu p-2">
                             <li className=" border bg-green-200 rounded-md  text-2xl"><Link to="/daseboard/list"><FaCalendar></FaCalendar>Manage list</Link></li>
@@ -36,7 +36,7 @@ const Daseboard = () => {
                             <li className=" border bg-green-200 rounded-md  text-2xl"><Link to="/daseboard/cart"><FaAd></FaAd>My Cart</Link></li>
                         </ul>
                         <ul className="menu p-2">
-                            <li className=" border bg-green-200 rounded-md  text-2xl"><Link to="/daseboard/item"><FaList></FaList>Add item</Link></li>
+                            <li className=" border bg-green-200 rounded-md  text-2xl"><Link to="/daseboard/history"><FaList></FaList>Payment histroy</Link></li>
                         </ul>
                     </>
                 }

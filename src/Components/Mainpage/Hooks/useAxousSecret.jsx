@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 
 export const axiossecret = axios.create({
-  baseURL: 'https://resturent-backend.vercel.app'
+  baseURL: 'http://localhost:5000'
 
 });
 const useAxousSecret = () => {
@@ -25,8 +25,8 @@ const useAxousSecret = () => {
     const status = error.response.status
     // console.log("status errro in the intersapter", status)
     if (status === 401 || status === 403) {
-      // await UserLogout()
-      // nagigate('/login')
+      await UserLogout()
+      nagigate('/login')
     }
     return Promise.reject(error)
   })
