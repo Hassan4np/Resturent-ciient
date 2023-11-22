@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 
 export const axiossecret = axios.create({
-  baseURL: 'http://localhost:5000'
+  baseURL: 'https://resturent-backend.vercel.app'
 
 });
 const useAxousSecret = () => {
